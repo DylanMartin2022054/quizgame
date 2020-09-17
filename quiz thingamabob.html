@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Quiz Game and Stuff</title>
+		<script>
+			let answers = ['Yes', 'Maybe', 'Why Not?', 'No'];
+			let questions = [{
+								qText: "Is Among Us bad?",
+								aList: ['Yes', 'Maybe', 'Why Not?', 'No'],
+								aCorrect: 'No',
+							},
+							{
+								qText: "Is PUBG good game?",
+								aList: ['Yes', 'Maybe', 'Why Not?', 'No'],
+								aCorrect: 'Maybe',
+							},
+							{
+								qText: "Is Apex good game?",
+								aList: ['Yes', 'Maybe', 'Why Not?', 'No'],
+								aCorrect: 'Why Not?',
+							},
+							{
+								qText: "Is Yuumi the best League of Legends champion?",
+								aList: ['Yes', 'Yes', 'Yes', 'Yes'],
+								aCorrect: 'Yes',
+							},
+							]
+			
+			function createQuestion() {
+				document.getElementById("questionBox").innerHTML = '';
+				let RNGthing = Math.floor(Math.random() * 5);
+				document.getElementById
+				for (let i = 0; i < answers.length; i++) {
+					document.getElementById("answersBox").innerHTML += `<input type="radio" id="answer${i+1}" name="selection" value="${answers[i]}">
+						<label for="${answers[i]}">${answers[i]}</label>`;
+				}
+			}
+			function checkAnswer() {
+				if (document.getElementById("answer4").checked) {
+					document.getElementById("response").innerHTML = "Correct.";
+				} else {
+					document.getElementById("response").innerHTML = 
+					"I find this resolution... TO BE... UNACCEPAAAAABBBBLLLLLEEEEEE";
+				}
+			}
+		</script>
+	</head>	
+	<body onload="createQuestion()">
+		<div id="questionBox">
+		Is Fortnite good?
+		</div>
+		<div id="answersBox">
+		</div>
+		<button id="submit" onclick="checkAnswer()">submit</button>
+		<div id="response">
+		</div>
+	</body>
+</html>
